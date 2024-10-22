@@ -30,9 +30,7 @@ namespace EDDemo
 
         private void pilasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmPilas mPilas = new frmPilas();
-            mPilas.MdiParent = this;
-            mPilas.Show();
+           
         }
 
         private void estructurasLinealesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,6 +43,11 @@ namespace EDDemo
             frmArboles mArboles = new frmArboles();
             mArboles.MdiParent = this;
             mArboles.Show();
+        }
+
+        private void estructurasNoLibealesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
