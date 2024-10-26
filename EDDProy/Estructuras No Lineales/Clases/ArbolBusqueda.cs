@@ -10,11 +10,13 @@ namespace EDDemo.Estructuras_No_Lineales
     {
         NodoBinario Raiz;
         public String strArbol;
+        public String strRecorrido;
 
         public ArbolBusqueda()
         {
             Raiz = null;
             strArbol = "";
+            strRecorrido="";
         }
 
         public Boolean EstaVacio()
@@ -58,5 +60,42 @@ namespace EDDemo.Estructuras_No_Lineales
             strArbol = strArbol + nodo.Dato.ToString() + "\r\n";
             Muestra(nivel + 1, nodo.Izq); 
         }
+
+        public void PreOrden(NodoBinario nodo)
+        {
+            if (nodo == null)
+                return;
+
+            strRecorrido = strRecorrido + nodo.Dato + ", ";
+            PreOrden(nodo.Izq);
+            PreOrden(nodo.Der);
+
+            return;
+        }
+
+        public void InOrden(NodoBinario nodo)
+        {
+            if (nodo == null)
+                return;
+
+            InOrden(nodo.Izq);
+            strRecorrido = strRecorrido + nodo.Dato + ", ";
+            InOrden(nodo.Der);
+
+            return;
+        }
+        public void PostOrden(NodoBinario nodo)
+        {
+            if (nodo == null)
+                return;
+
+            PostOrden(nodo.Izq);
+            PostOrden(nodo.Der);
+            strRecorrido = strRecorrido + nodo.Dato + ", ";
+
+            return;
+        }
+
+
     }
 }

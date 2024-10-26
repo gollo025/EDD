@@ -48,6 +48,106 @@ namespace EDDemo.Estructuras_No_Lineales
             miArbol = new ArbolBusqueda();
             txtArbol.Text  = "";
             txtDato.Text = "";
+            lblInOrden.Text = "";
+            lblPostOrden.Text = "";
+            lblPreOrden.Text = "";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Recorrido en PreOrden
+            //Obtenemos el nodo Raiz del arbol
+            miRaiz = miArbol.RegresaRaiz();
+            miArbol.strRecorrido = "";
+
+            if (miRaiz == null)
+            {
+                lblPreOrden.Text = "El arbol esta vacio";
+                return;
+            }
+            lblPreOrden.Text = "";
+            miArbol.PreOrden(miRaiz);
+
+            lblPreOrden.Text = miArbol.strRecorrido;
+
+
+            //Recorrido en InOrden
+            //Obtenemos el nodo Raiz del arbol
+            miRaiz = miArbol.RegresaRaiz();
+            miArbol.strRecorrido = "";
+
+            if (miRaiz == null)
+            {
+                lblInOrden.Text = "El arbol esta vacio";
+                return;
+            }
+            lblInOrden.Text = "";
+            miArbol.InOrden(miRaiz);
+            lblInOrden.Text = miArbol.strRecorrido;
+
+
+            //Recorrido en PostOrden
+            //Obtenemos el nodo Raiz del arbol
+            miRaiz = miArbol.RegresaRaiz();
+            miArbol.strRecorrido = "";
+
+            if (miRaiz == null)
+            {
+                lblPostOrden.Text = "El arbol esta vacio";
+                return;
+            }
+            lblPostOrden.Text = "";
+            miArbol.PostOrden(miRaiz);
+            lblPostOrden.Text = miArbol.strRecorrido;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            //Limpiamos los objetos y clases del anterior arbol
+            miArbol = null;
+            miRaiz = null;
+            miArbol = new ArbolBusqueda();
+            txtArbol.Text = "";
+            txtDato.Text = "";
+
+            miArbol.strArbol = "";
+
+            Random rnd = new Random();
+
+            for (int nNodos = 1; nNodos <= txtNodos.Value; nNodos++)
+            {
+                int Dato = rnd.Next(1, 100);
+                //Obtenemos el nodo Raiz del arbol
+                miRaiz = miArbol.RegresaRaiz();
+
+                //Se inserta el nodo con el dato capturado
+                miArbol.InsertaNodo(Dato, ref miRaiz);
+            }
+
+            //Leer arbol completo y mostrarlo en caja de texto
+            miArbol.Muestra(1, miRaiz);
+            txtArbol.Text = miArbol.strArbol;
+
+            txtDato.Text = "";
+        }
+
+        private void txtNodos_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
-}
+
+  
+    }
+
