@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace EDDemo.Estructuras_No_Lineales
 {
@@ -11,12 +13,14 @@ namespace EDDemo.Estructuras_No_Lineales
         NodoBinario Raiz;
         public String strArbol;
         public String strRecorrido;
+        NodoBinario miRaiz;
 
         public ArbolBusqueda()
         {
             Raiz = null;
             strArbol = "";
             strRecorrido="";
+            miRaiz = null;
         }
 
         public Boolean EstaVacio()
@@ -29,10 +33,23 @@ namespace EDDemo.Estructuras_No_Lineales
         public NodoBinario RegresaRaiz()
         {
             return Raiz;
+
+
         }
 
         public void InsertaNodo(int Dato, ref NodoBinario Nodo)
-        {            
+        {
+
+           
+
+            if (Busqueda(Dato, Nodo))
+            {
+
+                MessageBox.Show("El valor " + Dato + " ya existe en el árbol.");
+            }
+            
+            
+            
             if (Nodo == null)
             {
                 Nodo = new NodoBinario(Dato);
@@ -66,7 +83,7 @@ namespace EDDemo.Estructuras_No_Lineales
             if (nodo == null)
                 return;
 
-            strRecorrido = strRecorrido + nodo.Dato + ", ";
+            strRecorrido = strRecorrido + nodo.Dato + "--- ";
             PreOrden(nodo.Izq);
             PreOrden(nodo.Der);
 
@@ -79,7 +96,7 @@ namespace EDDemo.Estructuras_No_Lineales
                 return;
 
             InOrden(nodo.Izq);
-            strRecorrido = strRecorrido + nodo.Dato + ", ";
+            strRecorrido = strRecorrido + nodo.Dato + " --- ";
             InOrden(nodo.Der);
 
             return;
@@ -91,10 +108,23 @@ namespace EDDemo.Estructuras_No_Lineales
 
             PostOrden(nodo.Izq);
             PostOrden(nodo.Der);
-            strRecorrido = strRecorrido + nodo.Dato + ", ";
+            strRecorrido = strRecorrido + nodo.Dato + " --- ";
 
             return;
         }
+
+        public bool Busqueda(int Dato, NodoBinario nodo)
+{
+    if (nodo == null) // Si el nodo es nulo, el valor no se encuentra en el árbol
+        return false;
+
+    if (Dato < nodo.Dato) // Si el valor es menor, busca en el subárbol izquierdo
+        return Busqueda(Dato, nodo.Izq);
+    else if (Dato > nodo.Dato) // Si el valor es mayor, busca en el subárbol derecho
+        return Busqueda(Dato, nodo.Der);
+    else // Si encuentra el valor, regresa true
+        return true;
+}
 
 
     }

@@ -43,6 +43,9 @@ namespace EDDemo.Estructuras_No_Lineales
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnGraficar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblBuscado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txtNodos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,27 +118,26 @@ namespace EDDemo.Estructuras_No_Lineales
             this.lblPreOrden.AutoSize = true;
             this.lblPreOrden.Location = new System.Drawing.Point(114, 171);
             this.lblPreOrden.Name = "lblPreOrden";
-            this.lblPreOrden.Size = new System.Drawing.Size(81, 20);
+            this.lblPreOrden.Size = new System.Drawing.Size(0, 20);
             this.lblPreOrden.TabIndex = 6;
-            this.lblPreOrden.Text = "PreOrden:";
+            this.lblPreOrden.Click += new System.EventHandler(this.lblPreOrden_Click);
             // 
             // lblInOrden
             // 
             this.lblInOrden.AutoSize = true;
             this.lblInOrden.Location = new System.Drawing.Point(114, 197);
             this.lblInOrden.Name = "lblInOrden";
-            this.lblInOrden.Size = new System.Drawing.Size(71, 20);
+            this.lblInOrden.Size = new System.Drawing.Size(0, 20);
             this.lblInOrden.TabIndex = 7;
-            this.lblInOrden.Text = "InOrden:";
             // 
             // lblPostOrden
             // 
             this.lblPostOrden.AutoSize = true;
             this.lblPostOrden.Location = new System.Drawing.Point(114, 226);
             this.lblPostOrden.Name = "lblPostOrden";
-            this.lblPostOrden.Size = new System.Drawing.Size(89, 20);
+            this.lblPostOrden.Size = new System.Drawing.Size(0, 20);
             this.lblPostOrden.TabIndex = 8;
-            this.lblPostOrden.Text = "PostOrden:";
+            this.lblPostOrden.Click += new System.EventHandler(this.lblPostOrden_Click);
             // 
             // txtNodos
             // 
@@ -182,12 +184,41 @@ namespace EDDemo.Estructuras_No_Lineales
             this.label3.TabIndex = 13;
             this.label3.Text = "PostOrden:";
             // 
+            // btnGraficar
+            // 
+            this.btnGraficar.Location = new System.Drawing.Point(255, 107);
+            this.btnGraficar.Name = "btnGraficar";
+            this.btnGraficar.Size = new System.Drawing.Size(91, 35);
+            this.btnGraficar.TabIndex = 14;
+            this.btnGraficar.Text = "Graficar";
+            this.btnGraficar.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(352, 41);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(116, 20);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Nodo buscado:";
+            // 
+            // lblBuscado
+            // 
+            this.lblBuscado.AutoSize = true;
+            this.lblBuscado.Location = new System.Drawing.Point(474, 42);
+            this.lblBuscado.Name = "lblBuscado";
+            this.lblBuscado.Size = new System.Drawing.Size(0, 20);
+            this.lblBuscado.TabIndex = 16;
+            // 
             // frmArboles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(600, 472);
+            this.Controls.Add(this.lblBuscado);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnGraficar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -227,5 +258,8 @@ namespace EDDemo.Estructuras_No_Lineales
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnGraficar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblBuscado;
     }
 }

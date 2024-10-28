@@ -110,6 +110,34 @@ namespace EDDemo.Estructuras_No_Lineales
         private void btnBuscar_Click(object sender, EventArgs e)
         {
 
+            // Obtenemos el nodo Raiz del arbol
+            miRaiz = miArbol.RegresaRaiz();
+
+            // Validamos que el árbol no esté vacío
+            if (miRaiz == null)
+            {
+                MessageBox.Show("El árbol está vacío");
+                return;
+            }
+
+            // Convertimos el valor ingresado en la caja de texto a un entero
+            int valorABuscar;
+            if (int.TryParse(txtDato.Text, out valorABuscar))
+            {
+                // Llamamos al método de búsqueda
+                if (miArbol.Busqueda(valorABuscar, miRaiz))
+                {
+                    lblBuscado.Text = $"El valor {valorABuscar} fue encontrado en el árbol.";
+                }
+                else
+                {
+                    lblBuscado.Text = $"El valor {valorABuscar} no se encuentra en el árbol.";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, introduce un número válido.");
+            }
         }
 
         private void btnCrear_Click(object sender, EventArgs e)
@@ -143,6 +171,16 @@ namespace EDDemo.Estructuras_No_Lineales
         }
 
         private void txtNodos_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPreOrden_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPostOrden_Click(object sender, EventArgs e)
         {
 
         }
