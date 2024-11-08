@@ -51,6 +51,7 @@ namespace EDDemo.Estructuras_No_Lineales
             lblInOrden.Text = "";
             lblPostOrden.Text = "";
             lblPreOrden.Text = "";
+            lblBuscado = null;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -156,14 +157,14 @@ namespace EDDemo.Estructuras_No_Lineales
             for (int nNodos = 1; nNodos <= txtNodos.Value; nNodos++)
             {
                 int Dato = rnd.Next(1, 100);
-                //Obtenemos el nodo Raiz del arbol
+                
                 miRaiz = miArbol.RegresaRaiz();
 
-                //Se inserta el nodo con el dato capturado
+                
                 miArbol.InsertaNodo(Dato, ref miRaiz);
             }
 
-            //Leer arbol completo y mostrarlo en caja de texto
+            
             miArbol.Muestra(1, miRaiz);
             txtArbol.Text = miArbol.strArbol;
 
@@ -184,8 +185,65 @@ namespace EDDemo.Estructuras_No_Lineales
         {
 
         }
+
+        private void frmArboles_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPodar_Click(object sender, EventArgs e)
+        {
+
+            miArbol.PodarArbolCompleto();
+
+            MessageBox.Show("El árbol ha sido podado exitosamente.");
+
+            miArbol = null;
+            miRaiz = null;
+            miArbol = new ArbolBusqueda();
+            txtArbol.Text = "";
+            txtDato.Text = "";
+            lblInOrden.Text = "";
+            lblPostOrden.Text = "";
+            lblPreOrden.Text = "";
+            lblBuscado = null;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+             if (int.TryParse(txtDato.Text, out int valor)) // Convierte el texto a un número entero
+            {
+                miArbol.EliminarNodo(valor); // Llama al método EliminarNodo con el valor ingresado
+                MessageBox.Show($"El nodo con valor {valor} ha sido eliminado del árbol.");
+                
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingresa un número válido en el campo de texto.");
+            }
+
+            
+
+        }
+
+        private void txtArbol_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
   
-    }
+}
+    
 

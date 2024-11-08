@@ -15,12 +15,17 @@ namespace EDDemo.Estructuras_No_Lineales
         public String strRecorrido;
         NodoBinario miRaiz;
 
+       
+
         public ArbolBusqueda()
         {
             Raiz = null;
             strArbol = "";
             strRecorrido="";
             miRaiz = null;
+
+            
+            
         }
 
         public Boolean EstaVacio()
@@ -115,17 +120,101 @@ namespace EDDemo.Estructuras_No_Lineales
 
         public bool Busqueda(int Dato, NodoBinario nodo)
 {
-    if (nodo == null) // Si el nodo es nulo, el valor no se encuentra en el árbol
+    if (nodo == null) 
         return false;
 
-    if (Dato < nodo.Dato) // Si el valor es menor, busca en el subárbol izquierdo
+    if (Dato < nodo.Dato) 
         return Busqueda(Dato, nodo.Izq);
-    else if (Dato > nodo.Dato) // Si el valor es mayor, busca en el subárbol derecho
+    else if (Dato > nodo.Dato) 
         return Busqueda(Dato, nodo.Der);
-    else // Si encuentra el valor, regresa true
+    else 
         return true;
 }
 
+        public void PodarArbol(ref NodoBinario nodo)
+        {
+            // Si el nodo es nulo, no hay nada que podar
+            if (nodo == null)
+                return;
+
+            // Recorrer recursivamente el subárbol izquierdo y derecho
+            PodarArbol(ref nodo.Izq);
+            PodarArbol(ref nodo.Der);
+
+            // Una vez recorridos los subárboles, eliminamos el nodo actual
+            nodo = null;
+        }
+
+        public  void PodarArbolCompleto()
+        {
+            PodarArbol(ref Raiz);
+            Raiz = null; // Finalmente, establecemos la raíz en null para indicar que el árbol está vacío
+        }
+
+        private NodoBinario EncontrarPredecesor(NodoBinario nodo)
+        {
+            // Encuentra el nodo con el valor máximo en el subárbol izquierdo
+            while (nodo.Der != null)
+            {
+                nodo = nodo.Der;
+            }
+            return nodo;
+        }
+
+        public void EliminarNodo(int Dato)
+        {
+            EliminarNodo(ref Raiz, Dato);
+        }
+
+        private void EliminarNodo(ref NodoBinario nodo, int Dato)
+        {
+            if (nodo == null)
+            {
+                MessageBox.Show("El nodo no existe en el árbol.");
+                return;
+            }
+
+            if (Dato < nodo.Dato)
+            {
+                // Eliminar en el subárbol izquierdo
+                EliminarNodo(ref nodo.Izq, Dato);
+            }
+            else if (Dato > nodo.Dato)
+            {
+                // Eliminar en el subárbol derecho
+                EliminarNodo(ref nodo.Der, Dato);
+            }
+            else // Nodo encontrado
+            {
+                if (nodo.Izq == null && nodo.Der == null)
+                {
+                    // Caso 1: Nodo sin hijos (es una hoja)
+                    nodo = null;
+                }
+                else if (nodo.Izq == null)
+                {
+                    // Caso 2: Nodo con solo hijo derecho
+                    nodo = nodo.Der;
+                }
+                else if (nodo.Der == null)
+                {
+                    // Caso 2: Nodo con solo hijo izquierdo
+                    nodo = nodo.Izq;
+                }
+                else
+                {
+                    // Caso 3: Nodo con dos hijos
+                    NodoBinario predecesor = EncontrarPredecesor(nodo.Izq);
+                    nodo.Dato = predecesor.Dato; // Copiar el valor del predecesor al nodo actual
+                    EliminarNodo(ref nodo.Izq, predecesor.Dato); // Eliminar el predecesor
+                }
+            }
+        }
+
+
+
 
     }
+
+   
 }
