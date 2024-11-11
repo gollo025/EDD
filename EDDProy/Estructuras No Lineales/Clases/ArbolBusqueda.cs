@@ -88,7 +88,7 @@ namespace EDDemo.Estructuras_No_Lineales
             if (nodo == null)
                 return;
 
-            strRecorrido = strRecorrido + nodo.Dato + "--- ";
+            strRecorrido = strRecorrido + nodo.Dato + "- ";
             PreOrden(nodo.Izq);
             PreOrden(nodo.Der);
 
@@ -101,7 +101,7 @@ namespace EDDemo.Estructuras_No_Lineales
                 return;
 
             InOrden(nodo.Izq);
-            strRecorrido = strRecorrido + nodo.Dato + " --- ";
+            strRecorrido = strRecorrido + nodo.Dato + " - ";
             InOrden(nodo.Der);
 
             return;
@@ -113,7 +113,7 @@ namespace EDDemo.Estructuras_No_Lineales
 
             PostOrden(nodo.Izq);
             PostOrden(nodo.Der);
-            strRecorrido = strRecorrido + nodo.Dato + " --- ";
+            strRecorrido = strRecorrido + nodo.Dato + " - ";
 
             return;
         }
@@ -211,10 +211,138 @@ namespace EDDemo.Estructuras_No_Lineales
             }
         }
 
+        public NodoBinario EncontrarSucesor(NodoBinario nodo)
+        {
+            if (nodo.Der != null)
+            {
+                NodoBinario actual = nodo.Der;
+                while (actual.Izq != null)
+                {
+                    actual = actual.Izq;
+                }
+                return actual;
+            }
+            return null;
+        }
 
 
+        public void EliminarNodoSucesor(int Dato)
+        {
+            NodoBinario nodo = BuscarNodo  (Raiz, Dato); // Encuentra el nodo con el valor especificado
+            if (nodo == null)
+            {
+                MessageBox.Show($"El nodo con valor {Dato} no se encontró en el árbol.");
+                return;
+            }
+
+            NodoBinario sucesor = EncontrarSucesor(nodo); // Encuentra el sucesor
+            if (sucesor != null)
+            {
+                EliminarNodo(ref Raiz, sucesor.Dato); // Elimina el sucesor
+            }
+            else
+            {
+                MessageBox.Show("El nodo no tiene sucesor en el árbol.");
+            }
+        }
+
+        private NodoBinario BuscarNodo(NodoBinario nodo, int valor)
+        {
+            if (nodo == null)
+                return null;
+
+            if (valor < nodo.Dato)
+                return BuscarNodo(nodo.Izq, valor);
+            else if (valor > nodo.Dato)
+                return BuscarNodo(nodo.Der, valor);
+            else
+                return nodo;
+        }
+
+        public void RecorrerPorNiveles()
+        {
+            strRecorrido = ""; // Limpia el contenido anterior de strRecorrido
+
+            if (Raiz == null)
+            {
+                MessageBox.Show("El árbol está vacío.");
+                return;
+            }
+
+            Queue<NodoBinario> cola = new Queue<NodoBinario>();
+            cola.Enqueue(Raiz);
+
+            while (cola.Count > 0)
+            {
+                NodoBinario nodoActual = cola.Dequeue();
+                strRecorrido += nodoActual.Dato + " - ";
+
+                if (nodoActual.Izq != null)
+                {
+                    cola.Enqueue(nodoActual.Izq);
+                }
+
+                if (nodoActual.Der != null)
+                {
+                    cola.Enqueue(nodoActual.Der);
+                }
+            }
+        }
+
+        public int Altura()
+        {
+            return Altura(Raiz);
+        }
+
+        private int Altura(NodoBinario nodo)
+        {
+            if (nodo == null)
+            {
+                return 0; // Si el nodo es null, la altura es 0
+            }
+
+            int alturaIzquierda = Altura(nodo.Izq); // Altura del subárbol izquierdo
+            int alturaDerecha = Altura(nodo.Der);   // Altura del subárbol derecho
+
+            return Math.Max(alturaIzquierda, alturaDerecha) + 1; // Retorna la altura mayor + 1 para incluir el nodo actual
+        }
+        public int ContarHojas()
+        {
+            return ContarHojas(Raiz);
+        }
+
+        private int ContarHojas(NodoBinario nodo)
+        {
+            if (nodo == null)
+            {
+                return 0; // Si el nodo es null, no hay hojas
+            }
+            if (nodo.Izq == null && nodo.Der == null)
+            {
+                return 1; // Es una hoja
+            }
+
+            // Suma recursiva de las hojas en los subárboles izquierdo y derecho
+            return ContarHojas(nodo.Izq) + ContarHojas(nodo.Der);
+        }
+
+        public int ContarNodos()
+        {
+            return ContarNodos(Raiz);
+        }
+
+        private int ContarNodos(NodoBinario nodo)
+        {
+            if (nodo == null)
+            {
+                return 0; // Si el nodo es null, no hay nodo que contar
+            }
+
+            // Suma recursiva: el nodo actual (1) más los nodos en los subárboles izquierdo y derecho
+            return 1 + ContarNodos(nodo.Izq) + ContarNodos(nodo.Der);
+        }
 
     }
 
-   
+
 }

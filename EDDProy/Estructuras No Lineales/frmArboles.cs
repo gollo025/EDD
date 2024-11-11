@@ -24,7 +24,7 @@ namespace EDDemo.Estructuras_No_Lineales
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
- 
+
             //Obtenemos el nodo Raiz del arbol
             miRaiz = miArbol.RegresaRaiz();
 
@@ -37,7 +37,7 @@ namespace EDDemo.Estructuras_No_Lineales
             //Leer arbol completo y mostrarlo en caja de texto
             miArbol.Muestra(1, miRaiz);
             txtArbol.Text = miArbol.strArbol;
-            
+
             txtDato.Text = "";
         }
 
@@ -46,7 +46,7 @@ namespace EDDemo.Estructuras_No_Lineales
             miArbol = null;
             miRaiz = null;
             miArbol = new ArbolBusqueda();
-            txtArbol.Text  = "";
+            txtArbol.Text = "";
             txtDato.Text = "";
             lblInOrden.Text = "";
             lblPostOrden.Text = "";
@@ -157,14 +157,14 @@ namespace EDDemo.Estructuras_No_Lineales
             for (int nNodos = 1; nNodos <= txtNodos.Value; nNodos++)
             {
                 int Dato = rnd.Next(1, 100);
-                
+
                 miRaiz = miArbol.RegresaRaiz();
 
-                
+
                 miArbol.InsertaNodo(Dato, ref miRaiz);
             }
 
-            
+
             miArbol.Muestra(1, miRaiz);
             txtArbol.Text = miArbol.strArbol;
 
@@ -222,18 +222,23 @@ namespace EDDemo.Estructuras_No_Lineales
         private void button1_Click_1(object sender, EventArgs e)
         {
 
-             if (int.TryParse(txtDato.Text, out int valor)) // Convierte el texto a un número entero
+            if (int.TryParse(txtDato.Text, out int valor)) // Convierte el texto a un número entero
             {
-                miArbol.EliminarNodo(valor); // Llama al método EliminarNodo con el valor ingresado
-                MessageBox.Show($"El nodo con valor {valor} ha sido eliminado del árbol.");
-                
+                miArbol.EliminarNodo(valor); // Llama al método EliminarNodoPredecesor con el valor ingresado
+                MessageBox.Show($"El predecesor del nodo con valor {valor} ha sido eliminado del árbol.");
+
+                // Actualiza la visualización del árbol
+                miArbol.strArbol = ""; // Limpia el contenido anterior de strArbol
+                miArbol.Muestra(0, miArbol.RegresaRaiz()); // Llama a Muestra para regenerar el árbol en strArbol
+
+                // Muestra el árbol actualizado en el TextBox o Label correspondiente
+                txtArbol.Text = miArbol.strArbol; // txtArbol es el control donde muestras el árbol en el formulario
             }
             else
             {
                 MessageBox.Show("Por favor, ingresa un número válido en el campo de texto.");
             }
 
-            
 
         }
 
@@ -241,9 +246,62 @@ namespace EDDemo.Estructuras_No_Lineales
         {
 
         }
+
+        private void btnSucesor_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtDato.Text, out int valor)) // Convierte el texto a un número entero
+            {
+                miArbol.EliminarNodoSucesor(valor); // Llama al método EliminarNodoSucesor con el valor ingresado
+                MessageBox.Show($"El sucesor del nodo con valor {valor} ha sido eliminado del árbol.");
+
+                // Actualiza la visualización del árbol
+                miArbol.strArbol = ""; // Limpia el contenido anterior de strArbol
+                miArbol.Muestra(0, miArbol.RegresaRaiz()); // Llama a Muestra para regenerar el árbol en strArbol
+
+                // Muestra el árbol actualizado en el TextBox o Label correspondiente
+                txtArbol.Text = miArbol.strArbol; // txtArbol es el control donde muestras el árbol en el formulario
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingresa un número válido en el campo de texto.");
+            }
+        }
+
+        private void btnRec_Click(object sender, EventArgs e)
+        {
+            miArbol.RecorrerPorNiveles();
+            txtRecorrido.Text = miArbol.strRecorrido; // txtRecorrido es el control donde muestras el recorrido en el formulario
+        }
+
+        private void btnAltura_Click(object sender, EventArgs e)
+        {
+            int altura = miArbol.Altura();
+            lblAltura.Text = altura.ToString(); // txtAltura es el control donde muestras la altura en el formulario
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            int cantidadNodos = miArbol.ContarNodos();
+            lblNodos.Text = cantidadNodos.ToString(); // txtNodos es el control donde muestras la cantidad de nodos en el formulario
+        }
+
+        private void btnHojas_Click(object sender, EventArgs e)
+        {
+            int cantidadHojas = miArbol.ContarHojas();
+            lblHojas.Text = cantidadHojas.ToString(); // txtHojas es el control donde muestras la cantidad de hojas en el formulario
+        }
+    }
     }
 
+
+    
   
-}
+
     
 

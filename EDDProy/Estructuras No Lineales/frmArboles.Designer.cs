@@ -44,10 +44,23 @@ namespace EDDemo.Estructuras_No_Lineales
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnGraficar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.lblBuscado = new System.Windows.Forms.Label();
             this.btnPodar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnSucesor = new System.Windows.Forms.Button();
+            this.btnRec = new System.Windows.Forms.Button();
+            this.txtRecorrido = new System.Windows.Forms.TextBox();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.lblAltura = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnAltura = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblHojas = new System.Windows.Forms.Label();
+            this.btnHojas = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.CantidadNodos = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblNodos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txtNodos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,7 +94,7 @@ namespace EDDemo.Estructuras_No_Lineales
             this.txtArbol.Multiline = true;
             this.txtArbol.Name = "txtArbol";
             this.txtArbol.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtArbol.Size = new System.Drawing.Size(814, 204);
+            this.txtArbol.Size = new System.Drawing.Size(1269, 271);
             this.txtArbol.TabIndex = 2;
             this.txtArbol.TextChanged += new System.EventHandler(this.txtArbol_TextChanged);
             // 
@@ -196,20 +209,10 @@ namespace EDDemo.Estructuras_No_Lineales
             this.btnGraficar.Text = "Graficar";
             this.btnGraficar.UseVisualStyleBackColor = true;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(474, 171);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 20);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Nodo buscado:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
             // lblBuscado
             // 
             this.lblBuscado.AutoSize = true;
-            this.lblBuscado.Location = new System.Drawing.Point(596, 170);
+            this.lblBuscado.Location = new System.Drawing.Point(595, 171);
             this.lblBuscado.Name = "lblBuscado";
             this.lblBuscado.Size = new System.Drawing.Size(0, 20);
             this.lblBuscado.TabIndex = 16;
@@ -218,7 +221,7 @@ namespace EDDemo.Estructuras_No_Lineales
             // 
             this.btnPodar.Location = new System.Drawing.Point(352, 24);
             this.btnPodar.Name = "btnPodar";
-            this.btnPodar.Size = new System.Drawing.Size(89, 38);
+            this.btnPodar.Size = new System.Drawing.Size(175, 38);
             this.btnPodar.TabIndex = 17;
             this.btnPodar.Text = "Podar";
             this.btnPodar.UseVisualStyleBackColor = true;
@@ -228,22 +231,162 @@ namespace EDDemo.Estructuras_No_Lineales
             // 
             this.button1.Location = new System.Drawing.Point(352, 65);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 34);
+            this.button1.Size = new System.Drawing.Size(175, 34);
             this.button1.TabIndex = 18;
             this.button1.Text = "E.N PREDECESOR";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btnSucesor
+            // 
+            this.btnSucesor.Location = new System.Drawing.Point(352, 108);
+            this.btnSucesor.Name = "btnSucesor";
+            this.btnSucesor.Size = new System.Drawing.Size(175, 34);
+            this.btnSucesor.TabIndex = 19;
+            this.btnSucesor.Text = "E.N SUCESOR";
+            this.btnSucesor.UseVisualStyleBackColor = true;
+            this.btnSucesor.Click += new System.EventHandler(this.btnSucesor_Click);
+            // 
+            // btnRec
+            // 
+            this.btnRec.Location = new System.Drawing.Point(626, 69);
+            this.btnRec.Name = "btnRec";
+            this.btnRec.Size = new System.Drawing.Size(87, 33);
+            this.btnRec.TabIndex = 20;
+            this.btnRec.Text = "Recorrer";
+            this.btnRec.UseVisualStyleBackColor = true;
+            this.btnRec.Click += new System.EventHandler(this.btnRec_Click);
+            // 
+            // txtRecorrido
+            // 
+            this.txtRecorrido.Location = new System.Drawing.Point(722, 76);
+            this.txtRecorrido.Name = "txtRecorrido";
+            this.txtRecorrido.Size = new System.Drawing.Size(435, 26);
+            this.txtRecorrido.TabIndex = 21;
+            // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 539);
+            this.splitter1.TabIndex = 22;
+            this.splitter1.TabStop = false;
+            // 
+            // lblAltura
+            // 
+            this.lblAltura.AutoSize = true;
+            this.lblAltura.Location = new System.Drawing.Point(579, 197);
+            this.lblAltura.Name = "lblAltura";
+            this.lblAltura.Size = new System.Drawing.Size(0, 20);
+            this.lblAltura.TabIndex = 23;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(530, 197);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 20);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Altura:";
+            // 
+            // btnAltura
+            // 
+            this.btnAltura.Location = new System.Drawing.Point(533, 67);
+            this.btnAltura.Name = "btnAltura";
+            this.btnAltura.Size = new System.Drawing.Size(87, 34);
+            this.btnAltura.TabIndex = 25;
+            this.btnAltura.Text = "Altura";
+            this.btnAltura.UseVisualStyleBackColor = true;
+            this.btnAltura.Click += new System.EventHandler(this.btnAltura_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(529, 226);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 20);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "Hojas:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // lblHojas
+            // 
+            this.lblHojas.AutoSize = true;
+            this.lblHojas.Location = new System.Drawing.Point(583, 226);
+            this.lblHojas.Name = "lblHojas";
+            this.lblHojas.Size = new System.Drawing.Size(0, 20);
+            this.lblHojas.TabIndex = 27;
+            // 
+            // btnHojas
+            // 
+            this.btnHojas.Location = new System.Drawing.Point(534, 24);
+            this.btnHojas.Name = "btnHojas";
+            this.btnHojas.Size = new System.Drawing.Size(86, 37);
+            this.btnHojas.TabIndex = 28;
+            this.btnHojas.Text = "Hojas";
+            this.btnHojas.UseVisualStyleBackColor = true;
+            this.btnHojas.Click += new System.EventHandler(this.btnHojas_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(534, 105);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(86, 37);
+            this.button2.TabIndex = 29;
+            this.button2.Text = "Nodos";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // CantidadNodos
+            // 
+            this.CantidadNodos.AutoSize = true;
+            this.CantidadNodos.Location = new System.Drawing.Point(530, 170);
+            this.CantidadNodos.Name = "CantidadNodos";
+            this.CantidadNodos.Size = new System.Drawing.Size(59, 20);
+            this.CantidadNodos.TabIndex = 30;
+            this.CantidadNodos.Text = "Nodos:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(674, 171);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(116, 20);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Nodo buscado:";
+            // 
+            // lblNodos
+            // 
+            this.lblNodos.AutoSize = true;
+            this.lblNodos.Location = new System.Drawing.Point(797, 171);
+            this.lblNodos.Name = "lblNodos";
+            this.lblNodos.Size = new System.Drawing.Size(70, 20);
+            this.lblNodos.TabIndex = 32;
+            this.lblNodos.Text = "buscado";
             // 
             // frmArboles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(831, 472);
+            this.ClientSize = new System.Drawing.Size(1286, 539);
+            this.Controls.Add(this.lblNodos);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.CantidadNodos);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnHojas);
+            this.Controls.Add(this.lblHojas);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnAltura);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblAltura);
+            this.Controls.Add(this.splitter1);
+            this.Controls.Add(this.txtRecorrido);
+            this.Controls.Add(this.btnRec);
+            this.Controls.Add(this.btnSucesor);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnPodar);
             this.Controls.Add(this.lblBuscado);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnGraficar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -286,9 +429,22 @@ namespace EDDemo.Estructuras_No_Lineales
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnGraficar;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblBuscado;
         private System.Windows.Forms.Button btnPodar;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSucesor;
+        private System.Windows.Forms.Button btnRec;
+        private System.Windows.Forms.TextBox txtRecorrido;
+        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Label lblAltura;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnAltura;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblHojas;
+        private System.Windows.Forms.Button btnHojas;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label CantidadNodos;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblNodos;
     }
 }
