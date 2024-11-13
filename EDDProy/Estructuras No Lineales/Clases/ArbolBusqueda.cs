@@ -15,17 +15,17 @@ namespace EDDemo.Estructuras_No_Lineales
         public String strRecorrido;
         NodoBinario miRaiz;
 
-       
+
 
         public ArbolBusqueda()
         {
             Raiz = null;
             strArbol = "";
-            strRecorrido="";
+            strRecorrido = "";
             miRaiz = null;
 
-            
-            
+
+
         }
 
         public Boolean EstaVacio()
@@ -45,16 +45,16 @@ namespace EDDemo.Estructuras_No_Lineales
         public void InsertaNodo(int Dato, ref NodoBinario Nodo)
         {
 
-           
+
 
             if (Busqueda(Dato, Nodo))
             {
 
                 MessageBox.Show("El valor " + Dato + " ya existe en el árbol.");
             }
-            
-            
-            
+
+
+
             if (Nodo == null)
             {
                 Nodo = new NodoBinario(Dato);
@@ -68,19 +68,19 @@ namespace EDDemo.Estructuras_No_Lineales
             else if (Dato < Nodo.Dato)
                 InsertaNodo(Dato, ref Nodo.Izq);
             else if (Dato > Nodo.Dato)
-                InsertaNodo(Dato, ref Nodo.Der);          
+                InsertaNodo(Dato, ref Nodo.Der);
         }
-        public void Muestra(int nivel, NodoBinario nodo )
+        public void Muestra(int nivel, NodoBinario nodo)
         {
             if (nodo == null)
                 return;
             Muestra(nivel + 1, nodo.Der);
-            for(int i=0; i<nivel; i++)
+            for (int i = 0; i < nivel; i++)
             {
                 strArbol = strArbol + "     ";
             }
             strArbol = strArbol + nodo.Dato.ToString() + "\r\n";
-            Muestra(nivel + 1, nodo.Izq); 
+            Muestra(nivel + 1, nodo.Izq);
         }
 
         public void PreOrden(NodoBinario nodo)
@@ -119,17 +119,17 @@ namespace EDDemo.Estructuras_No_Lineales
         }
 
         public bool Busqueda(int Dato, NodoBinario nodo)
-{
-    if (nodo == null) 
-        return false;
+        {
+            if (nodo == null)
+                return false;
 
-    if (Dato < nodo.Dato) 
-        return Busqueda(Dato, nodo.Izq);
-    else if (Dato > nodo.Dato) 
-        return Busqueda(Dato, nodo.Der);
-    else 
-        return true;
-}
+            if (Dato < nodo.Dato)
+                return Busqueda(Dato, nodo.Izq);
+            else if (Dato > nodo.Dato)
+                return Busqueda(Dato, nodo.Der);
+            else
+                return true;
+        }
 
         public void PodarArbol(ref NodoBinario nodo)
         {
@@ -145,7 +145,7 @@ namespace EDDemo.Estructuras_No_Lineales
             nodo = null;
         }
 
-        public  void PodarArbolCompleto()
+        public void PodarArbolCompleto()
         {
             PodarArbol(ref Raiz);
             Raiz = null; // Finalmente, establecemos la raíz en null para indicar que el árbol está vacío
@@ -228,7 +228,7 @@ namespace EDDemo.Estructuras_No_Lineales
 
         public void EliminarNodoSucesor(int Dato)
         {
-            NodoBinario nodo = BuscarNodo  (Raiz, Dato); // Encuentra el nodo con el valor especificado
+            NodoBinario nodo = BuscarNodo(Raiz, Dato); // Encuentra el nodo con el valor especificado
             if (nodo == null)
             {
                 MessageBox.Show($"El nodo con valor {Dato} no se encontró en el árbol.");
@@ -341,6 +341,73 @@ namespace EDDemo.Estructuras_No_Lineales
             // Suma recursiva: el nodo actual (1) más los nodos en los subárboles izquierdo y derecho
             return 1 + ContarNodos(nodo.Izq) + ContarNodos(nodo.Der);
         }
+        public bool EsArbolBinarioCompleto()
+        {
+            if (Raiz == null)
+                return true; // Un árbol vacío se considera completo
+
+            Queue<NodoBinario> cola = new Queue<NodoBinario>();
+            cola.Enqueue(Raiz);
+            bool nodoVacioEncontrado = false; // Indica si encontramos un nodo sin hijos completos
+
+            while (cola.Count > 0)
+            {
+                NodoBinario nodoActual = cola.Dequeue();
+
+                // Verificamos el hijo izquierdo
+                if (nodoActual.Izq != null)
+                {
+                    if (nodoVacioEncontrado)
+                        return false; // Si ya se encontró un nodo vacío antes, no puede haber más hijos
+
+                    cola.Enqueue(nodoActual.Izq);
+                }
+                else
+                {
+                    nodoVacioEncontrado = true; // Si el nodo izquierdo está vacío, activamos el indicador
+                }
+
+                // Verificamos el hijo derecho
+                if (nodoActual.Der != null)
+                {
+                    if (nodoVacioEncontrado)
+                        return false; // Si ya se encontró un nodo vacío antes, no puede haber más hijos
+
+                    cola.Enqueue(nodoActual.Der);
+                }
+                else
+                {
+                    nodoVacioEncontrado = true; // Si el nodo derecho está vacío, activamos el indicador
+                }
+            }
+
+            return true; // Si pasamos todas las verificaciones, el árbol es completo
+        }
+
+
+        public bool EsArbolBinarioLleno()
+        {
+            return EsArbolBinarioLleno(Raiz);
+        }
+
+        private bool EsArbolBinarioLleno(NodoBinario nodo)
+        {
+            // Si el nodo es null, es un árbol lleno por defecto
+            if (nodo == null)
+                return true;
+
+            // Si el nodo es una hoja, cumple con la condición de un árbol lleno
+            if (nodo.Izq == null && nodo.Der == null)
+                return true;
+
+            // Si el nodo tiene exactamente dos hijos, verificamos ambos subárboles
+            if (nodo.Izq != null && nodo.Der != null)
+                return EsArbolBinarioLleno(nodo.Izq) && EsArbolBinarioLleno(nodo.Der);
+
+            // Si el nodo tiene solo un hijo, no es un árbol binario lleno
+            return false;
+        }
+
 
     }
 

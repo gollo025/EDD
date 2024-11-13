@@ -61,6 +61,8 @@ namespace EDDemo.Estructuras_No_Lineales
             this.CantidadNodos = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblNodos = new System.Windows.Forms.Label();
+            this.btnArbolCompleto = new System.Windows.Forms.Button();
+            this.btnArbolLleno = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.txtNodos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -340,29 +342,49 @@ namespace EDDemo.Estructuras_No_Lineales
             // CantidadNodos
             // 
             this.CantidadNodos.AutoSize = true;
-            this.CantidadNodos.Location = new System.Drawing.Point(530, 170);
+            this.CantidadNodos.Location = new System.Drawing.Point(689, 171);
             this.CantidadNodos.Name = "CantidadNodos";
-            this.CantidadNodos.Size = new System.Drawing.Size(59, 20);
+            this.CantidadNodos.Size = new System.Drawing.Size(118, 20);
             this.CantidadNodos.TabIndex = 30;
-            this.CantidadNodos.Text = "Nodos:";
+            this.CantidadNodos.Text = "Nodo Buscado:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(674, 171);
+            this.label4.Location = new System.Drawing.Point(529, 171);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 20);
+            this.label4.Size = new System.Drawing.Size(59, 20);
             this.label4.TabIndex = 31;
-            this.label4.Text = "Nodo buscado:";
+            this.label4.Text = "Nodos:";
             // 
             // lblNodos
             // 
             this.lblNodos.AutoSize = true;
-            this.lblNodos.Location = new System.Drawing.Point(797, 171);
+            this.lblNodos.Location = new System.Drawing.Point(585, 171);
             this.lblNodos.Name = "lblNodos";
             this.lblNodos.Size = new System.Drawing.Size(70, 20);
             this.lblNodos.TabIndex = 32;
             this.lblNodos.Text = "buscado";
+            // 
+            // btnArbolCompleto
+            // 
+            this.btnArbolCompleto.Location = new System.Drawing.Point(626, 107);
+            this.btnArbolCompleto.Name = "btnArbolCompleto";
+            this.btnArbolCompleto.Size = new System.Drawing.Size(87, 35);
+            this.btnArbolCompleto.TabIndex = 33;
+            this.btnArbolCompleto.Text = "A.Comp";
+            this.btnArbolCompleto.UseVisualStyleBackColor = true;
+            this.btnArbolCompleto.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnArbolLleno
+            // 
+            this.btnArbolLleno.Location = new System.Drawing.Point(626, 24);
+            this.btnArbolLleno.Name = "btnArbolLleno";
+            this.btnArbolLleno.Size = new System.Drawing.Size(87, 37);
+            this.btnArbolLleno.TabIndex = 34;
+            this.btnArbolLleno.Text = "A.Lleno";
+            this.btnArbolLleno.UseVisualStyleBackColor = true;
+            this.btnArbolLleno.Click += new System.EventHandler(this.btnArbolLleno_Click);
             // 
             // frmArboles
             // 
@@ -370,6 +392,8 @@ namespace EDDemo.Estructuras_No_Lineales
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1286, 539);
+            this.Controls.Add(this.btnArbolLleno);
+            this.Controls.Add(this.btnArbolCompleto);
             this.Controls.Add(this.lblNodos);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.CantidadNodos);
@@ -446,5 +470,7 @@ namespace EDDemo.Estructuras_No_Lineales
         private System.Windows.Forms.Label CantidadNodos;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblNodos;
+        private System.Windows.Forms.Button btnArbolCompleto;
+        private System.Windows.Forms.Button btnArbolLleno;
     }
 }

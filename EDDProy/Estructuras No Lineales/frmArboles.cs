@@ -296,7 +296,34 @@ namespace EDDemo.Estructuras_No_Lineales
             int cantidadHojas = miArbol.ContarHojas();
             lblHojas.Text = cantidadHojas.ToString(); // txtHojas es el control donde muestras la cantidad de hojas en el formulario
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ArbolBusqueda arbol = new ArbolBusqueda(); // Asegúrate de que "arbol" sea una instancia del árbol que estás utilizando
+            bool esCompleto = arbol.EsArbolBinarioCompleto();
+
+            if (esCompleto)
+                MessageBox.Show("El árbol es un árbol binario completo.");
+            else
+                MessageBox.Show("El árbol no es un árbol binario completo.");
+        }
+
+        private void btnArbolLleno_Click(object sender, EventArgs e)
+        {
+
+            ArbolBusqueda arbol = new ArbolBusqueda(); // Asegúrate de que "arbol" sea la instancia del árbol que estás utilizando
+            bool esLleno = arbol.EsArbolBinarioLleno();
+
+            if (esLleno)
+                MessageBox.Show("El árbol es un árbol binario lleno.");
+            else
+                MessageBox.Show("El árbol no es un árbol binario lleno.");
+
+        }
     }
+
+
+
     }
 
 
