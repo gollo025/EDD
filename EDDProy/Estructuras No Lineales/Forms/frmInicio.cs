@@ -91,5 +91,23 @@ namespace EDDemo
 
             miBus.Show();
         }
+
+        private void fACTORIALToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Factorial miFactorial = new Factorial();    
+
+            miFactorial.MdiParent = this;
+
+            miFactorial.Show();
+        }
+
+        private void fIBONACCIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Fibonacci fibonacci = new Fibonacci();
+
+            fibonacci.MdiParent = this;
+
+            fibonacci.Show();
+        }
     }
 }

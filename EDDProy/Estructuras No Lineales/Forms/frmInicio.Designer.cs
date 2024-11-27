@@ -138,12 +138,14 @@ namespace EDDemo
             this.fIBONACCIToolStripMenuItem.Name = "fIBONACCIToolStripMenuItem";
             this.fIBONACCIToolStripMenuItem.Size = new System.Drawing.Size(286, 34);
             this.fIBONACCIToolStripMenuItem.Text = "FIBONACCI";
+            this.fIBONACCIToolStripMenuItem.Click += new System.EventHandler(this.fIBONACCIToolStripMenuItem_Click);
             // 
             // fACTORIALToolStripMenuItem
             // 
             this.fACTORIALToolStripMenuItem.Name = "fACTORIALToolStripMenuItem";
             this.fACTORIALToolStripMenuItem.Size = new System.Drawing.Size(286, 34);
             this.fACTORIALToolStripMenuItem.Text = "FACTORIAL";
+            this.fACTORIALToolStripMenuItem.Click += new System.EventHandler(this.fACTORIALToolStripMenuItem_Click);
             // 
             // bUSQUEDABUNARIAToolStripMenuItem
             // 

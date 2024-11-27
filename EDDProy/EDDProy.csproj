@@ -63,6 +63,18 @@
     <Compile Include="Estructuras No Lineales\Forms\Exponente.Designer.cs">
       <DependentUpon>Exponente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Estructuras No Lineales\Forms\Factorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estructuras No Lineales\Forms\Factorial.Designer.cs">
+      <DependentUpon>Factorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estructuras No Lineales\Forms\Fibonacci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estructuras No Lineales\Forms\Fibonacci.Designer.cs">
+      <DependentUpon>Fibonacci.cs</DependentUpon>
+    </Compile>
     <Compile Include="Estructuras No Lineales\Forms\frmArboles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +107,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Estructuras No Lineales\Forms\Exponente.resx">
       <DependentUpon>Exponente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estructuras No Lineales\Forms\Factorial.resx">
+      <DependentUpon>Factorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estructuras No Lineales\Forms\Fibonacci.resx">
+      <DependentUpon>Fibonacci.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estructuras No Lineales\Forms\frmArboles.resx">
       <DependentUpon>frmArboles.cs</DependentUpon>

@@ -42,9 +42,22 @@ namespace EDDemo.Estructuras_No_Lineales.Clases
             else if (array[medio] > objetivo) return BusquedaBinaria(array, inicio, medio - 1, objetivo);
             
             else return BusquedaBinaria(array, medio + 1, fin, objetivo); }
+
+        // Fibonacci
+        public int Fibonacci(int n) { if (n <= 1) return n; 
+            
+            return Fibonacci(n - 1) + Fibonacci(n - 2); }
+
+
+
+
+        // Factorial
+        public int Factorial(int n) { if (n <= 1) return 1; 
+            
+            return n * Factorial(n - 1); }
     }
 
-
+    
 
 }
 
