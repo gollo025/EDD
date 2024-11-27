@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EDDemo.Estructuras_No_Lineales;
+using EDDemo.Estructuras_No_Lineales.Forms;
 
 namespace EDDemo
 {
@@ -48,6 +49,47 @@ namespace EDDemo
         private void estructurasNoLibealesToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lISTASToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sUMAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Suma miSuma = new Suma();
+
+            miSuma.MdiParent = this;
+
+            miSuma.Show();
+        }
+
+        private void eXPONENTEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exponente miExpo = new Exponente();
+
+            miExpo.MdiParent = this;
+
+            miExpo.Show();
+        }
+
+        private void tORRESDEHANOIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Torres miTorre= new Torres();
+
+            miTorre.MdiParent = this;   
+
+            miTorre.Show();
+        }
+
+        private void bUSQUEDABUNARIAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Busqueda miBus = new Busqueda();
+
+            miBus.MdiParent = this;
+
+            miBus.Show();
         }
     }
 }

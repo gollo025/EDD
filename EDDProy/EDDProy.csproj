@@ -50,26 +50,63 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Estructuras No Lineales\Clases\ArbolBusqueda.cs" />
-    <Compile Include="Estructuras No Lineales\frmArboles.cs">
+    <Compile Include="Estructuras No Lineales\Clases\Recursivos.cs" />
+    <Compile Include="Estructuras No Lineales\Forms\Busqueda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estructuras No Lineales\frmArboles.Designer.cs">
+    <Compile Include="Estructuras No Lineales\Forms\Busqueda.Designer.cs">
+      <DependentUpon>Busqueda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estructuras No Lineales\Forms\Exponente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estructuras No Lineales\Forms\Exponente.Designer.cs">
+      <DependentUpon>Exponente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estructuras No Lineales\Forms\frmArboles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estructuras No Lineales\Forms\frmArboles.Designer.cs">
       <DependentUpon>frmArboles.cs</DependentUpon>
     </Compile>
     <Compile Include="Estructuras No Lineales\Clases\NodoBinario.cs" />
-    <Compile Include="frmInicio.cs">
+    <Compile Include="Estructuras No Lineales\Forms\frmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInicio.Designer.cs">
+    <Compile Include="Estructuras No Lineales\Forms\frmInicio.Designer.cs">
       <DependentUpon>frmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estructuras No Lineales\Forms\Suma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estructuras No Lineales\Forms\Suma.Designer.cs">
+      <DependentUpon>Suma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estructuras No Lineales\Forms\Torres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estructuras No Lineales\Forms\Torres.Designer.cs">
+      <DependentUpon>Torres.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Estructuras No Lineales\frmArboles.resx">
+    <EmbeddedResource Include="Estructuras No Lineales\Forms\Busqueda.resx">
+      <DependentUpon>Busqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estructuras No Lineales\Forms\Exponente.resx">
+      <DependentUpon>Exponente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estructuras No Lineales\Forms\frmArboles.resx">
       <DependentUpon>frmArboles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInicio.resx">
+    <EmbeddedResource Include="Estructuras No Lineales\Forms\frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estructuras No Lineales\Forms\Suma.resx">
+      <DependentUpon>Suma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estructuras No Lineales\Forms\Torres.resx">
+      <DependentUpon>Torres.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
