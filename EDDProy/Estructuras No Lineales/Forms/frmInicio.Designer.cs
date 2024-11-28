@@ -43,6 +43,20 @@ namespace EDDemo
             this.fACTORIALToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bUSQUEDABUNARIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tORRESDEHANOIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lISTASDOBENCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lISTASCIRCSIMPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lISTASCIRCDOBENCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mETODOSDEORDENAMIENTOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.bUSQUEDAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bURBUJAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.qUICKSORTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sHELLSORTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rADIXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iNTERCALACIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mEZCLADIRECTAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mEZCLANATURALToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,13 +67,18 @@ namespace EDDemo
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.estructurasNoLibealesToolStripMenuItem,
             this.eSTRUCTURASLINEALESToolStripMenuItem,
-            this.rECURSIVIDADToolStripMenuItem});
+            this.rECURSIVIDADToolStripMenuItem,
+            this.mETODOSDEORDENAMIENTOToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.bUSQUEDAToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1025, 33);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // estructurasNoLibealesToolStripMenuItem
             // 
@@ -82,7 +101,10 @@ namespace EDDemo
             this.eSTRUCTURASLINEALESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pILASToolStripMenuItem,
             this.cOLASToolStripMenuItem,
-            this.lISTASToolStripMenuItem});
+            this.lISTASToolStripMenuItem,
+            this.lISTASDOBENCToolStripMenuItem,
+            this.lISTASCIRCSIMPToolStripMenuItem,
+            this.lISTASCIRCDOBENCToolStripMenuItem});
             this.eSTRUCTURASLINEALESToolStripMenuItem.Name = "eSTRUCTURASLINEALESToolStripMenuItem";
             this.eSTRUCTURASLINEALESToolStripMenuItem.Size = new System.Drawing.Size(223, 29);
             this.eSTRUCTURASLINEALESToolStripMenuItem.Text = "ESTRUCTURAS LINEALES";
@@ -90,20 +112,21 @@ namespace EDDemo
             // pILASToolStripMenuItem
             // 
             this.pILASToolStripMenuItem.Name = "pILASToolStripMenuItem";
-            this.pILASToolStripMenuItem.Size = new System.Drawing.Size(170, 34);
+            this.pILASToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.pILASToolStripMenuItem.Text = "PILAS";
+            this.pILASToolStripMenuItem.Click += new System.EventHandler(this.pILASToolStripMenuItem_Click_1);
             // 
             // cOLASToolStripMenuItem
             // 
             this.cOLASToolStripMenuItem.Name = "cOLASToolStripMenuItem";
-            this.cOLASToolStripMenuItem.Size = new System.Drawing.Size(170, 34);
+            this.cOLASToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.cOLASToolStripMenuItem.Text = "COLAS";
             // 
             // lISTASToolStripMenuItem
             // 
             this.lISTASToolStripMenuItem.Name = "lISTASToolStripMenuItem";
-            this.lISTASToolStripMenuItem.Size = new System.Drawing.Size(170, 34);
-            this.lISTASToolStripMenuItem.Text = "LISTAS";
+            this.lISTASToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
+            this.lISTASToolStripMenuItem.Text = "LISTAS SIMPLES";
             this.lISTASToolStripMenuItem.Click += new System.EventHandler(this.lISTASToolStripMenuItem_Click);
             // 
             // rECURSIVIDADToolStripMenuItem
@@ -161,6 +184,99 @@ namespace EDDemo
             this.tORRESDEHANOIToolStripMenuItem.Text = "TORRES DE HANOI";
             this.tORRESDEHANOIToolStripMenuItem.Click += new System.EventHandler(this.tORRESDEHANOIToolStripMenuItem_Click);
             // 
+            // lISTASDOBENCToolStripMenuItem
+            // 
+            this.lISTASDOBENCToolStripMenuItem.Name = "lISTASDOBENCToolStripMenuItem";
+            this.lISTASDOBENCToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
+            this.lISTASDOBENCToolStripMenuItem.Text = "LISTAS DOB. ENC.";
+            // 
+            // lISTASCIRCSIMPToolStripMenuItem
+            // 
+            this.lISTASCIRCSIMPToolStripMenuItem.Name = "lISTASCIRCSIMPToolStripMenuItem";
+            this.lISTASCIRCSIMPToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
+            this.lISTASCIRCSIMPToolStripMenuItem.Text = "LISTAS CIRC.SIMP";
+            // 
+            // lISTASCIRCDOBENCToolStripMenuItem
+            // 
+            this.lISTASCIRCDOBENCToolStripMenuItem.Name = "lISTASCIRCDOBENCToolStripMenuItem";
+            this.lISTASCIRCDOBENCToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
+            this.lISTASCIRCDOBENCToolStripMenuItem.Text = "LISTAS CIRC.DOB.ENC";
+            // 
+            // mETODOSDEORDENAMIENTOToolStripMenuItem
+            // 
+            this.mETODOSDEORDENAMIENTOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bURBUJAToolStripMenuItem,
+            this.qUICKSORTToolStripMenuItem,
+            this.sHELLSORTToolStripMenuItem,
+            this.rADIXToolStripMenuItem,
+            this.iNTERCALACIONToolStripMenuItem,
+            this.mEZCLADIRECTAToolStripMenuItem,
+            this.mEZCLANATURALToolStripMenuItem});
+            this.mETODOSDEORDENAMIENTOToolStripMenuItem.Name = "mETODOSDEORDENAMIENTOToolStripMenuItem";
+            this.mETODOSDEORDENAMIENTOToolStripMenuItem.Size = new System.Drawing.Size(165, 29);
+            this.mETODOSDEORDENAMIENTOToolStripMenuItem.Text = "ORDENAMIENTO";
+            this.mETODOSDEORDENAMIENTOToolStripMenuItem.Click += new System.EventHandler(this.mETODOSDEORDENAMIENTOToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(16, 29);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(16, 29);
+            // 
+            // bUSQUEDAToolStripMenuItem
+            // 
+            this.bUSQUEDAToolStripMenuItem.Name = "bUSQUEDAToolStripMenuItem";
+            this.bUSQUEDAToolStripMenuItem.Size = new System.Drawing.Size(120, 29);
+            this.bUSQUEDAToolStripMenuItem.Text = "BUSQUEDA";
+            this.bUSQUEDAToolStripMenuItem.Click += new System.EventHandler(this.bUSQUEDAToolStripMenuItem_Click);
+            // 
+            // bURBUJAToolStripMenuItem
+            // 
+            this.bURBUJAToolStripMenuItem.Name = "bURBUJAToolStripMenuItem";
+            this.bURBUJAToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.bURBUJAToolStripMenuItem.Text = "BURBUJA";
+            // 
+            // qUICKSORTToolStripMenuItem
+            // 
+            this.qUICKSORTToolStripMenuItem.Name = "qUICKSORTToolStripMenuItem";
+            this.qUICKSORTToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.qUICKSORTToolStripMenuItem.Text = "QUICKSORT";
+            // 
+            // sHELLSORTToolStripMenuItem
+            // 
+            this.sHELLSORTToolStripMenuItem.Name = "sHELLSORTToolStripMenuItem";
+            this.sHELLSORTToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.sHELLSORTToolStripMenuItem.Text = "SHELLSORT";
+            // 
+            // rADIXToolStripMenuItem
+            // 
+            this.rADIXToolStripMenuItem.Name = "rADIXToolStripMenuItem";
+            this.rADIXToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.rADIXToolStripMenuItem.Text = "RADIX";
+            // 
+            // iNTERCALACIONToolStripMenuItem
+            // 
+            this.iNTERCALACIONToolStripMenuItem.Name = "iNTERCALACIONToolStripMenuItem";
+            this.iNTERCALACIONToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.iNTERCALACIONToolStripMenuItem.Text = "INTERCALACION";
+            // 
+            // mEZCLADIRECTAToolStripMenuItem
+            // 
+            this.mEZCLADIRECTAToolStripMenuItem.Name = "mEZCLADIRECTAToolStripMenuItem";
+            this.mEZCLADIRECTAToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.mEZCLADIRECTAToolStripMenuItem.Text = "MEZCLA DIRECTA";
+            // 
+            // mEZCLANATURALToolStripMenuItem
+            // 
+            this.mEZCLANATURALToolStripMenuItem.Name = "mEZCLANATURALToolStripMenuItem";
+            this.mEZCLANATURALToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.mEZCLANATURALToolStripMenuItem.Text = "MEZCLA NATURAL";
+            this.mEZCLANATURALToolStripMenuItem.Click += new System.EventHandler(this.mEZCLANATURALToolStripMenuItem_Click);
+            // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -195,6 +311,20 @@ namespace EDDemo
         private System.Windows.Forms.ToolStripMenuItem fACTORIALToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bUSQUEDABUNARIAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tORRESDEHANOIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lISTASDOBENCToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lISTASCIRCSIMPToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lISTASCIRCDOBENCToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mETODOSDEORDENAMIENTOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem bURBUJAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem qUICKSORTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sHELLSORTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rADIXToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem iNTERCALACIONToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mEZCLADIRECTAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mEZCLANATURALToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bUSQUEDAToolStripMenuItem;
     }
 }
 

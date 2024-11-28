@@ -109,5 +109,34 @@ namespace EDDemo
 
             fibonacci.Show();
         }
+
+        private void pILASToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Pilas pilas = new Pilas();
+
+            pilas.MdiParent = this;
+
+            pilas.Show();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void mETODOSDEORDENAMIENTOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mEZCLANATURALToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bUSQUEDAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
