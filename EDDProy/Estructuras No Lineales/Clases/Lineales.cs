@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EDDemo.Estructuras_No_Lineales.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -97,4 +98,105 @@ namespace EDDemo.Estructuras_No_Lineales.Clases
             }
         }
     }
+
+    public class Cola
+    {
+        public Nodo Frente; // Representa el frente de la cola
+        public Nodo Final;  // Representa el final de la cola
+
+        // Inicializar la cola
+        public void Inicializar()
+        {
+            Frente = Final = null;
+        }
+
+        // Verificar si la cola está vacía
+        public bool EstaVacia()
+        {
+            return Frente == null;
+        }
+
+        // Insertar un dato en la cola (Encolar)
+        public void Encolar(int dato)
+        {
+            Nodo Nuevo = new Nodo { Dato = dato, Sig = null };
+
+            if (EstaVacia())
+            {
+                Frente = Final = Nuevo;
+            }
+            else
+            {
+                Final.Sig = Nuevo;
+                Final = Nuevo;
+            }
+        }
+
+        // Extraer un dato de la cola (Desencolar)
+        public int Desencolar()
+        {
+            if (EstaVacia())
+            {
+                throw new InvalidOperationException("La cola está vacía");
+            }
+
+            int dato = Frente.Dato;
+            Frente = Frente.Sig;
+
+            if (Frente == null)
+            {
+                Final = null;
+            }
+
+            return dato;
+        }
+
+        // Buscar un dato en la cola de forma recursiva
+        public bool Buscar(int dato)
+        {
+            return BuscarRecursivo(Frente, dato);
+        }
+
+        private bool BuscarRecursivo(Nodo actual, int dato)
+        {
+            if (actual == null)
+            {
+                return false;
+            }
+
+            if (actual.Dato == dato)
+            {
+                return true;
+            }
+
+            return BuscarRecursivo(actual.Sig, dato);
+        }
+
+        // Limpiar toda la cola
+        public void Limpiar()
+        {
+            Frente = Final = null;
+        }
+
+        // Recorrer y mostrar los datos de la cola (Recursivo)
+        public void Recorrer()
+        {
+            RecorrerRecursivo(Frente);
+        }
+
+        private void RecorrerRecursivo(Nodo actual)
+        {
+            if (actual != null)
+            {
+                Console.WriteLine(actual.Dato);
+                RecorrerRecursivo(actual.Sig);
+            }
+        }
+    }
+
+
 }
+
+
+
+

@@ -138,5 +138,14 @@ namespace EDDemo
         {
 
         }
+
+        private void cOLASToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Colas colas = new Colas();
+
+            colas.MdiParent = this;
+
+            colas.Show();
+        }
     }
 }

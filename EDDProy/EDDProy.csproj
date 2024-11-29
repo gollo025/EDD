@@ -58,6 +58,12 @@
     <Compile Include="Estructuras No Lineales\Forms\Busqueda.Designer.cs">
       <DependentUpon>Busqueda.cs</DependentUpon>
     </Compile>
+    <Compile Include="Estructuras No Lineales\Forms\Colas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estructuras No Lineales\Forms\Colas.Designer.cs">
+      <DependentUpon>Colas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Estructuras No Lineales\Forms\Exponente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Estructuras No Lineales\Forms\Busqueda.resx">
       <DependentUpon>Busqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estructuras No Lineales\Forms\Colas.resx">
+      <DependentUpon>Colas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estructuras No Lineales\Forms\Exponente.resx">
       <DependentUpon>Exponente.cs</DependentUpon>
