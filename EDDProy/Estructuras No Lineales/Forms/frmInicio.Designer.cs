@@ -38,7 +38,6 @@ namespace EDDemo
             this.lISTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lISTASDOBENCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lISTASCIRCSIMPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lISTASCIRCDOBENCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rECURSIVIDADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sUMAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eXPONENTEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,7 +91,7 @@ namespace EDDemo
             // arbolesToolStripMenuItem
             // 
             this.arbolesToolStripMenuItem.Name = "arbolesToolStripMenuItem";
-            this.arbolesToolStripMenuItem.Size = new System.Drawing.Size(188, 34);
+            this.arbolesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.arbolesToolStripMenuItem.Text = "ARBOLES";
             this.arbolesToolStripMenuItem.Click += new System.EventHandler(this.arbolesToolStripMenuItem_Click);
             // 
@@ -103,8 +102,7 @@ namespace EDDemo
             this.cOLASToolStripMenuItem,
             this.lISTASToolStripMenuItem,
             this.lISTASDOBENCToolStripMenuItem,
-            this.lISTASCIRCSIMPToolStripMenuItem,
-            this.lISTASCIRCDOBENCToolStripMenuItem});
+            this.lISTASCIRCSIMPToolStripMenuItem});
             this.eSTRUCTURASLINEALESToolStripMenuItem.Name = "eSTRUCTURASLINEALESToolStripMenuItem";
             this.eSTRUCTURASLINEALESToolStripMenuItem.Size = new System.Drawing.Size(223, 29);
             this.eSTRUCTURASLINEALESToolStripMenuItem.Text = "ESTRUCTURAS LINEALES";
@@ -112,41 +110,36 @@ namespace EDDemo
             // pILASToolStripMenuItem
             // 
             this.pILASToolStripMenuItem.Name = "pILASToolStripMenuItem";
-            this.pILASToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
+            this.pILASToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.pILASToolStripMenuItem.Text = "PILAS";
             this.pILASToolStripMenuItem.Click += new System.EventHandler(this.pILASToolStripMenuItem_Click_1);
             // 
             // cOLASToolStripMenuItem
             // 
             this.cOLASToolStripMenuItem.Name = "cOLASToolStripMenuItem";
-            this.cOLASToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
+            this.cOLASToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.cOLASToolStripMenuItem.Text = "COLAS";
             this.cOLASToolStripMenuItem.Click += new System.EventHandler(this.cOLASToolStripMenuItem_Click);
             // 
             // lISTASToolStripMenuItem
             // 
             this.lISTASToolStripMenuItem.Name = "lISTASToolStripMenuItem";
-            this.lISTASToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
+            this.lISTASToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.lISTASToolStripMenuItem.Text = "LISTAS SIMPLES";
             this.lISTASToolStripMenuItem.Click += new System.EventHandler(this.lISTASToolStripMenuItem_Click);
             // 
             // lISTASDOBENCToolStripMenuItem
             // 
             this.lISTASDOBENCToolStripMenuItem.Name = "lISTASDOBENCToolStripMenuItem";
-            this.lISTASDOBENCToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
+            this.lISTASDOBENCToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.lISTASDOBENCToolStripMenuItem.Text = "LISTAS DOB. ENC.";
+            this.lISTASDOBENCToolStripMenuItem.Click += new System.EventHandler(this.lISTASDOBENCToolStripMenuItem_Click);
             // 
             // lISTASCIRCSIMPToolStripMenuItem
             // 
             this.lISTASCIRCSIMPToolStripMenuItem.Name = "lISTASCIRCSIMPToolStripMenuItem";
-            this.lISTASCIRCSIMPToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
+            this.lISTASCIRCSIMPToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.lISTASCIRCSIMPToolStripMenuItem.Text = "LISTAS CIRC.SIMP";
-            // 
-            // lISTASCIRCDOBENCToolStripMenuItem
-            // 
-            this.lISTASCIRCDOBENCToolStripMenuItem.Name = "lISTASCIRCDOBENCToolStripMenuItem";
-            this.lISTASCIRCDOBENCToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
-            this.lISTASCIRCDOBENCToolStripMenuItem.Text = "LISTAS CIRC.DOB.ENC";
             // 
             // rECURSIVIDADToolStripMenuItem
             // 
@@ -221,43 +214,43 @@ namespace EDDemo
             // bURBUJAToolStripMenuItem
             // 
             this.bURBUJAToolStripMenuItem.Name = "bURBUJAToolStripMenuItem";
-            this.bURBUJAToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.bURBUJAToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.bURBUJAToolStripMenuItem.Text = "BURBUJA";
             // 
             // qUICKSORTToolStripMenuItem
             // 
             this.qUICKSORTToolStripMenuItem.Name = "qUICKSORTToolStripMenuItem";
-            this.qUICKSORTToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.qUICKSORTToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.qUICKSORTToolStripMenuItem.Text = "QUICKSORT";
             // 
             // sHELLSORTToolStripMenuItem
             // 
             this.sHELLSORTToolStripMenuItem.Name = "sHELLSORTToolStripMenuItem";
-            this.sHELLSORTToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.sHELLSORTToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.sHELLSORTToolStripMenuItem.Text = "SHELLSORT";
             // 
             // rADIXToolStripMenuItem
             // 
             this.rADIXToolStripMenuItem.Name = "rADIXToolStripMenuItem";
-            this.rADIXToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.rADIXToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.rADIXToolStripMenuItem.Text = "RADIX";
             // 
             // iNTERCALACIONToolStripMenuItem
             // 
             this.iNTERCALACIONToolStripMenuItem.Name = "iNTERCALACIONToolStripMenuItem";
-            this.iNTERCALACIONToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.iNTERCALACIONToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.iNTERCALACIONToolStripMenuItem.Text = "INTERCALACION";
             // 
             // mEZCLADIRECTAToolStripMenuItem
             // 
             this.mEZCLADIRECTAToolStripMenuItem.Name = "mEZCLADIRECTAToolStripMenuItem";
-            this.mEZCLADIRECTAToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.mEZCLADIRECTAToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.mEZCLADIRECTAToolStripMenuItem.Text = "MEZCLA DIRECTA";
             // 
             // mEZCLANATURALToolStripMenuItem
             // 
             this.mEZCLANATURALToolStripMenuItem.Name = "mEZCLANATURALToolStripMenuItem";
-            this.mEZCLANATURALToolStripMenuItem.Size = new System.Drawing.Size(262, 34);
+            this.mEZCLANATURALToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.mEZCLANATURALToolStripMenuItem.Text = "MEZCLA NATURAL";
             this.mEZCLANATURALToolStripMenuItem.Click += new System.EventHandler(this.mEZCLANATURALToolStripMenuItem_Click);
             // 
@@ -314,7 +307,6 @@ namespace EDDemo
         private System.Windows.Forms.ToolStripMenuItem tORRESDEHANOIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lISTASDOBENCToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lISTASCIRCSIMPToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lISTASCIRCDOBENCToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mETODOSDEORDENAMIENTOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;

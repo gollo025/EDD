@@ -151,5 +151,12 @@ namespace EDDemo
 
             colas.Show();
         }
+
+        private void lISTASDOBENCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListasDobles listasDouble = new ListasDobles();
+            listasDouble.MdiParent = this;
+            listasDouble.Show();
+        }
     }
 }

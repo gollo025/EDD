@@ -11,12 +11,23 @@ namespace EDDemo.Estructuras_No_Lineales.Clases
     {
         public int Dato { get; set; }
         public Nodo Sig { get; set; }
+
+
+    }
+
+    public class NodoDoble
+    {
+
+        public int Dato { get; set; }
+        public NodoDoble Anterior { get; set; }
+        public NodoDoble Siguiente { get; set; }
+
     }
 
     public class Pila
     {
         public Nodo Top; // Representa la cima de la pila
-       
+
         // Inicializar la pila
         public void Inicializar()
         {
@@ -326,10 +337,204 @@ namespace EDDemo.Estructuras_No_Lineales.Clases
                 RecorrerRecursivo(actual.Sig);
             }
         }
+
+
+        public class ListaDoble
+        {
+            public NodoDoble Inicio; // Representa el inicio de la lista
+            public NodoDoble Fin;    // Representa el final de la lista
+
+            // Verificar si la lista está vacía
+            public bool EstaVacia()
+            {
+                return Inicio == null;
+            }
+
+            // Insertar un dato en una posición específica
+            public void Insertar(int dato, int posicion)
+            {
+                NodoDoble nuevo = new NodoDoble { Dato = dato };
+
+                if (posicion < 0)
+                {
+                    throw new ArgumentOutOfRangeException("Posición inválida");
+                }
+
+                if (posicion == 0)
+                {
+                    nuevo.Siguiente = Inicio;
+
+                    if (Inicio != null)
+                    {
+                        Inicio.Anterior = nuevo;
+                    }
+
+                    Inicio = nuevo;
+
+                    if (Fin == null) // Si la lista estaba vacía, Fin también debe apuntar a nuevo
+                    {
+                        Fin = nuevo;
+                    }
+                }
+                else
+                {
+                    InsertarRecursivo(Inicio, nuevo, posicion - 1);
+                }
+            }
+
+            private void InsertarRecursivo(NodoDoble actual, NodoDoble nuevo, int posicion)
+            {
+                if (actual == null)
+                {
+                    throw new ArgumentOutOfRangeException("Posición inválida");
+                }
+
+                if (posicion == 0)
+                {
+                    nuevo.Siguiente = actual.Siguiente;
+                    nuevo.Anterior = actual;
+
+                    if (actual.Siguiente != null)
+                    {
+                        actual.Siguiente.Anterior = nuevo;
+                    }
+
+                    actual.Siguiente = nuevo;
+
+                    if (nuevo.Siguiente == null) // Si se inserta al final, actualizar Fin
+                    {
+                        Fin = nuevo;
+                    }
+                }
+                else
+                {
+                    InsertarRecursivo(actual.Siguiente, nuevo, posicion - 1);
+                }
+            }
+
+            // Eliminar un dato de la lista en una posición específica
+            public void Eliminar(int posicion)
+            {
+                if (EstaVacia())
+                {
+                    throw new InvalidOperationException("La lista está vacía");
+                }
+
+                if (posicion < 0)
+                {
+                    throw new ArgumentOutOfRangeException("Posición inválida");
+                }
+
+                if (posicion == 0)
+                {
+                    if (Inicio.Siguiente != null)
+                    {
+                        Inicio.Siguiente.Anterior = null;
+                    }
+
+                    Inicio = Inicio.Siguiente;
+
+                    if (Inicio == null) // Si la lista quedó vacía, actualizar Fin
+                    {
+                        Fin = null;
+                    }
+                }
+                else
+                {
+                    EliminarRecursivo(Inicio, posicion - 1);
+                }
+            }
+
+            private void EliminarRecursivo(NodoDoble actual, int posicion)
+            {
+                if (actual == null || actual.Siguiente == null)
+                {
+                    throw new ArgumentOutOfRangeException("Posición inválida");
+                }
+
+                if (posicion == 0)
+                {
+                    NodoDoble nodoEliminar = actual.Siguiente;
+                    actual.Siguiente = nodoEliminar.Siguiente;
+
+                    if (nodoEliminar.Siguiente != null)
+                    {
+                        nodoEliminar.Siguiente.Anterior = actual;
+                    }
+
+                    if (nodoEliminar == Fin) // Si se elimina el último nodo, actualizar Fin
+                    {
+                        Fin = actual;
+                    }
+                }
+                else
+                {
+                    EliminarRecursivo(actual.Siguiente, posicion - 1);
+                }
+            }
+
+            // Buscar un dato en la lista de forma recursiva
+            public bool Buscar(int dato)
+            {
+                return BuscarRecursivo(Inicio, dato);
+            }
+
+            private bool BuscarRecursivo(NodoDoble actual, int dato)
+            {
+                if (actual == null)
+                {
+                    return false;
+                }
+
+                if (actual.Dato == dato)
+                {
+                    return true;
+                }
+
+                return BuscarRecursivo(actual.Siguiente, dato);
+            }
+
+            // Limpiar toda la lista
+            public void Limpiar()
+            {
+                Inicio = Fin = null;
+            }
+
+            // Recorrer y mostrar los datos de la lista de manera recursiva hacia adelante
+            public void Recorrer()
+            {
+                RecorrerRecursivo(Inicio);
+            }
+
+            private void RecorrerRecursivo(NodoDoble actual)
+            {
+                if (actual != null)
+                {
+                    Console.WriteLine(actual.Dato);
+                    RecorrerRecursivo(actual.Siguiente);
+                }
+            }
+
+            // Recorrer y mostrar los datos de la lista de manera recursiva hacia atrás
+            public void RecorrerInverso()
+            {
+                RecorrerInversoRecursivo(Fin);
+            }
+
+            private void RecorrerInversoRecursivo(NodoDoble actual)
+            {
+                if (actual != null)
+                {
+                    Console.WriteLine(actual.Dato);
+                    RecorrerInversoRecursivo(actual.Anterior);
+                }
+            }
+        }
+
     }
-
-
 }
+
+    
 
 
 
