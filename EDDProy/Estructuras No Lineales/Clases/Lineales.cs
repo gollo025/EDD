@@ -194,6 +194,140 @@ namespace EDDemo.Estructuras_No_Lineales.Clases
         }
     }
 
+    public class ListaSimple
+    {
+        public Nodo Inicio; // Representa el inicio de la lista
+
+        // Inicializar la lista
+        public void Inicializar()
+        {
+            Inicio = null;
+        }
+
+        // Verificar si la lista está vacía
+        public bool EstaVacia()
+        {
+            return Inicio == null;
+        }
+
+        // Insertar un dato en la lista (al final)
+        public void Insertar(int dato, int posicion)
+        {
+            Nodo nuevo = new Nodo { Dato = dato, Sig = null };
+
+            if (posicion < 0)
+            {
+                throw new ArgumentOutOfRangeException("Posición inválida");
+            }
+
+            if (posicion == 0)
+            {
+                nuevo.Sig = Inicio;
+                Inicio = nuevo;
+            }
+            else
+            {
+                InsertarRecursivo(Inicio, nuevo, posicion - 1);
+            }
+        }
+
+        private void InsertarRecursivo(Nodo actual, Nodo nuevo, int posicion)
+        {
+            if (actual == null)
+            {
+                throw new ArgumentOutOfRangeException("Posición inválida");
+            }
+
+            if (posicion == 0)
+            {
+                nuevo.Sig = actual.Sig;
+                actual.Sig = nuevo;
+            }
+            else
+            {
+                InsertarRecursivo(actual.Sig, nuevo, posicion - 1);
+            }
+        }
+
+
+        // Extraer un dato de la lista (eliminar el primer nodo con ese dato)
+        public void Eliminar(int dato)
+        {
+            if (EstaVacia())
+            {
+                throw new InvalidOperationException("La lista está vacía");
+            }
+
+            if (Inicio.Dato == dato)
+            {
+                Inicio = Inicio.Sig;
+            }
+            else
+            {
+                EliminarRecursivo(Inicio, dato);
+            }
+        }
+
+        private void EliminarRecursivo(Nodo actual, int dato)
+        {
+            if (actual.Sig == null)
+            {
+                throw new InvalidOperationException("Dato no encontrado en la lista");
+            }
+
+            if (actual.Sig.Dato == dato)
+            {
+                actual.Sig = actual.Sig.Sig;
+            }
+            else
+            {
+                EliminarRecursivo(actual.Sig, dato);
+            }
+        }
+
+        // Buscar un dato en la lista de forma recursiva
+        public bool Buscar(int dato)
+        {
+            return BuscarRecursivo(Inicio, dato);
+        }
+
+        private bool BuscarRecursivo(Nodo actual, int dato)
+        {
+            if (actual == null)
+            {
+                return false;
+            }
+
+            if (actual.Dato == dato)
+            {
+                return true;
+            }
+
+            return BuscarRecursivo(actual.Sig, dato);
+        }
+
+        // Limpiar toda la lista
+        public void Limpiar()
+        {
+            Inicio = null;
+        }
+
+        // Recorrer y mostrar los datos de la lista (Recursivo)
+        public void Recorrer()
+        {
+            RecorrerRecursivo(Inicio);
+        }
+
+        private void RecorrerRecursivo(Nodo actual)
+        {
+            if (actual != null)
+            {
+                Console.WriteLine(actual.Dato);
+                RecorrerRecursivo(actual.Sig);
+            }
+        }
+    }
+
 
 }
 

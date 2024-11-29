@@ -53,7 +53,11 @@ namespace EDDemo
 
         private void lISTASToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ListasSimples lista=new ListasSimples();    
 
+            lista.MdiParent=this;
+
+            lista.Show();
         }
 
         private void sUMAToolStripMenuItem_Click(object sender, EventArgs e)
